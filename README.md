@@ -57,6 +57,11 @@ Say NO to 'Legacy code'
 ### Prerequisites
 Make sure you have Rust on your machine.
 
+### Download the Unix Executable File
+This executable file is located in the releases tab, this executable can also be created when you run the project!
+<br>
+To check if your system is Unix based [click here](https://en.wikipedia.org/wiki/List_of_Unix_systems).
+
 ### Run the Project
 To run the project, execute the following command:
 
