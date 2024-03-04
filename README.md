@@ -58,7 +58,9 @@ Say NO to 'Legacy code'
 Make sure you have Rust on your machine.
 
 ### Download the Unix Executable File
-This executable file is located in the releases tab, this executable can also be created when you run the project!
+This executable file is located in the releases tab, or you can [download it here](https://github.com/Telmo-Sousa/rust_calc/releases/download/1.1/rust_calc).
+<br>
+It can be created when you run the project and is found at /src/target/debug or /src/target/release depending on how you build it.
 <br>
 To check if your system is Unix based [click here](https://en.wikipedia.org/wiki/List_of_Unix_systems).
 
