@@ -1,4 +1,5 @@
-use gdk;
+use gtk::gio;
+use gtk::gio::prelude::*;
 use gtk::prelude::*;
 use gtk::{Button, Grid, Label, Window, WindowType};
 use std::cell::RefCell;
@@ -8,10 +9,32 @@ fn main() {
     // Initialize GTK
     gtk::init().expect("Failed to initialize GTK.");
 
+    // Initialize GApplication
+    let application = gtk::Application::new(
+        Some("com.telmo-sousa.rust_calc"),
+        gio::ApplicationFlags::FLAGS_NONE,
+    );
+
+    // Connect activate and startup signals
+    application.connect_activate(|app| {
+        build_ui(app);
+    });
+
+    application.connect_startup(|app| {
+        // This is empty for now, I don't need to do anything here yet
+        // This is because I don't need to do anything when the application starts up
+    });
+
+    // Run the application
+    application.run();
+}
+
+fn build_ui(application: &gtk::Application) {
     // Create the main window
     let window = Window::new(WindowType::Toplevel);
+    window.set_application(Some(application));
     window.set_title("rust_calc by Sousa");
-    window.set_default_size(200, 200);
+    window.set_default_size(400, 600);
 
     // Create a grid to organize the buttons
     let grid = Grid::new();
